@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/** 
+ * Allows the player and other objects to interact with objects.
+ * Author: Eric Tran
+ * Version: 5/17/2022
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,11 +48,12 @@ public class Target : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        
         if (!gameObject.CompareTag("Bad"))
         {
             gameManager.GameOver();
         }
+        Destroy(gameObject);
     }
     Vector3 RandomForce()
     {
